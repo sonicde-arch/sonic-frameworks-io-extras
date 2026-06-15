@@ -4,13 +4,14 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=sonic-frameworks-io-extras
-pkgver=26.07.70
+pkgver=26.04.2
 pkgrel=1
 pkgdesc='Additional components to increase the functionality of KIO'
 arch=(x86_64)
 url='https://github.com/Sonic-DE/sonic-frameworks-io-extras'
 license=(LGPL-2.0-or-later)
-depends=(glibc
+depends=(gcc-libs
+         glibc
          karchive
          kcmutils
          kconfig
@@ -38,7 +39,7 @@ depends=(glibc
          sh
          smbclient
          solid
-         sonic-activities 
+         sonic-activities
          sonic-frameworks-core-addons
          sonic-frameworks-io
          syntax-highlighting)
@@ -61,7 +62,7 @@ provides=(kio-extras)
 conflicts=(kio-extras)
 groups=(sonicde-frameworks)
 source=("$pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('0ca04d3e4c36407241166d1daec05e5f36ec1a83b416dabf61d624a829276863')
+sha256sums=('c90470650067cf1482b50713fd1143ab90e434efba2c5a43683992de8724ba03')
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
